@@ -1,0 +1,2 @@
+# LGDXS
+nomal_lecture

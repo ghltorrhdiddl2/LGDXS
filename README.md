@@ -1,2 +1,2 @@
 # LGDXS
-nomal_lecture
+lecture --> daliy study

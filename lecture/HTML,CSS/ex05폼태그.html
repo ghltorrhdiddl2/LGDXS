@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        사용자가 입력한 데이터를 하나로 묶어서 전송하는 태그 <form>
+            - 입력받기 위해서 input 태그를 활용
+            - input은 type을 통해서 형태를 결정
+            - ★input태그는 모든 값을 value속성이 저장 -> 눈에 보이지 않음
+            - ★input태그는 반드시 name속성이 필요 -> Why? 백엔드에서 데이터를 처리할 때 구분하기 위해
+            - ★radio를 활용할 때는 반드시 name과 value가 필수! -> name(그룹화)/value(값)
+            - method="post" -> 주소창에 value값(pw 등) 숨김
+    -->
+    <form action="받는 서버의 주소" method="post">
+        <span>아이디 : </span><input type="text" name="id" value="abc"><br>
+        <span>비밀번호 : </span><input type="password" name="pw" value="abc"><br>
+        <span>비밀번호 확인 : </span><input type="password" name="pwcheck" value="abc"><br>
+        <span>성별 : </span><input type="radio" name="gender" value="male">남자<input type="radio" name="gender" value="female">여자<br>
+        <span>자식의 성별 : </span><input type="radio" name="childgender" value="male">남자<input type="radio" name="childgender" value="female">여자<br>
+        <span>취미 : </span><input type="checkbox" name="hobby" value="book">독서<input type="checkbox" name="hobby" value="music">음악감상<br>
+        <input type="submit" value="회원가입">
+    </form>
+</body>
+</html>

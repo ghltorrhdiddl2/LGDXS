@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        표를 만들기 위한 태그 <table>
+            - 구성요소 3가지
+            - 행을 담당하는 태그(줄을 담당) -> tr
+            - 열을 담당하는 태그(컬럼을 담당) -> th / 제목
+            - 열을 담당하는 태그(일반적인 데이터를 담당) -> td / 하위 데이터 
+            - 표를 제작할 때 큰것부터 작은 것 순으로 작성
+            - table > tr > th or td
+            - 병합 가로병합(colspan), 세로병합(rowspan) -> 많이 쓰진 않는다
+    -->
+    <table border="1px solid black">
+        <tr bgcolor="yellow">
+            <th>이름</th>
+            <th>성별</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td>정형</td>
+            <td>남자</td>
+            <td>광주</td>
+        </tr>
+        <tr>
+            <td>손지영</td>
+            <td>여자</td>
+            <td>광주</td>
+        </tr>
+    </table>
+    <br><br>
+    <table border="1px solid black">
+        <tr bgcolor="yellow">
+            <th>이름</th>
+            <th colspan="2">성별,주소</th>
+            <th>직급</th>
+        </tr>
+        <tr>
+            <td>정형</td>
+            <td>남자</td>
+            <td>광주</td>
+            <td rowspan="2">선임</td>
+        </tr>
+        <tr>
+            <td>손지영</td>
+            <td>여자</td>
+            <td>광주</td>
+        </tr>
+    </table>
+</body>
+</html>

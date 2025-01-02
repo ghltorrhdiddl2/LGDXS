@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            style태그 안에 CSS문법을 통해서 디자인을 부여할 수 있음
+            ★CSS에서는 선택자가 가장 중요!
+            - class 선택자 : 특정 태그들에게 이름을 부여하는 역할
+                - why? 특정 태그들의 그룹을 만들어서 스타일을 한번에 적용하기 위해
+                - Key! 기호는 (.)으로 표시하고, 클래스는 중복이 된다!
+            - ID 선택자 : 특정 태그에게 이름을 부여
+                - why? 특정 태그에게 고유한 이름을 부여할 때 사용 (로그인, 검색창, 로고)
+                - Key! 기호는 (#)으로 표시하고, 아이디는 중복이 안됨
+            - 선택자는 우선순위가 존재
+            - 범위가 좁으면 좁을수록 우선순위가 높아진다
+            - id > class > tag
+
+            - 계층선택자 : 태그에 포함관계를 활용해서 작성하는 선택자
+                - 자식선택자 : 부모와 자식의 포함관계를 활용하는 방법, 기호 (>)를 사용
+                - 선택자는 반드시 첫번째가 출발지, 마지막이 목적지다
+
+            - 가상클래스 선택자 : 몇 번째 자식인지를 활용하는 선택자
+                - nth-chid(n) -> 특정 자식을 지칭하는 방법
+
+            - 크롤링에서 사용하는 선택자는 4가지 (id, class, 자식, 가상클래스)
+            - 단수 vs 복수
+            - 단수 : id, 가상클래스
+            - 복수 : class, 자식선택자
+            - 사용처 : python을 통해서 컴퓨터에게 특정 태그들만 수집하라고 명령 
+                -> 태그에 접근하기 위해서는 반드시 선택자 필요
+        */
+        span{color: blue;font-size: 30px;}
+        span.txt{color: yellow;}  /*.class*/
+        span#unique{color: green;} /*#id*/
+        p>span{color: pink;} /*>계층(부모자식)선택자*/
+        p>span:nth-child(2){color: purple;}
+    </style>
+</head>
+<body>
+    <h1>문서의 대제목 입니다</h1>
+    <span class="txt" id="unique">여기는 비어있는 껍데기 태그</span><br>
+    <span class="txt">여기는 다음 껍데기 태그</span><br>
+    <span>여기는 마지막 껍데기 태그</span><br>
+    <!-- <span id="unique">여기는 고유한 껍데기 태그</span> -->
+
+    <p>
+        <span>계층을 활용한 스타일 부여</span>
+        <span>계층을 활용한 스타일 부여</span>
+    </p>
+</body>
+</html>

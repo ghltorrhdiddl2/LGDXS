@@ -42,3 +42,51 @@ select max(salary)-min(salary) from employees;
 --20.
 select e.first_name, d.department_name, e.department_id from employees e join departments d 
 on e.department_id=d.department_id;
+--21.
+select manager_id, min(salary) from employees where manager_id is not null and not salary <5000
+group by manager_id
+order by min(salary) desc;
+--22.
+select e.first_name, d.department_name, l.location_id, l.city from employees e inner join departments d
+on e.department_id=d.department_id inner join locations l on d.location_id=l.location_id
+where e.commission_pct is not null;
+--23.
+select m.first_name, e.hire_date as 상사, m.hire_date as 본인 from employees e join employees m on e.employee_id=m.manager_id
+where e.hire_date > m.hire_date;
+
+SELECT e.first_name AS 본인, e.hire_date AS 본인_고용일, 
+       m.first_name AS 상사, m.hire_date AS 상사_고용일
+FROM employees e
+JOIN employees m ON e.manager_id = m.employee_id
+WHERE e.hire_date < m.hire_date;
+--24.
+select d.department_name, d.location_id, count(e.employee_id), round(avg(e.salary))
+from employees e join departments d on e.department_id=d.department_id
+group by d.department_name, d.location_id
+order by d.location_id;
+--25.
+select employee_id, hire_date, last_name from employees 
+where department_id=(select department_id from employees where last_name='Zlotkey')
+and last_name<>'Zlotkey';
+--26.
+select employee_id, first_name from employees
+where salary>(select avg(salary) from employees);
+--27.
+select employee_id, first_name from employees
+where department_id in (select department_id from employees where first_name like '%u%');
+--28.
+select e.first_name, e.department_id, l.location_id from employees e join departments d on e.department_id=d.department_id
+join locations l on d.location_id=l.location_id
+where commission_pct is null and l.city='Seattle';
+--29.
+select first_name, hire_date from employees
+where hire_date > (select hire_date from employees where last_name='Davies')
+order by hire_date desc;
+--30.
+select first_name, salary from employees
+where manager_id in (select employee_id from employees where last_name='King');
+--31.
+select employee_id, first_name, salary, department_id from employees
+where department_id in (select department_id from employees
+    where salary>(select avg(salary) from employees)
+        and first_name like '%u%');

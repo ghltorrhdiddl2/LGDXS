@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수 3가지 존재
+        // var : JS의 가장 기본이 되는 변수 키워드
+        // 단점 - 똑같은 변수 선언 가능 -> 개발할 때 충돌 발생
+        // 공개된 오픈소스, API에는 대부분 var키워드로 작성되어 있음
+        var num = 10;
+        console.log(num);
+        var num = 5;
+        console.log(num); //변수명 중복 가능! (JS에서)
+
+        // let : ECMA6사용된 변수 키워드 -> 현재 표준(권장사항)
+        // 특징 : 똑같은 이름의 변수선언이 불가능
+        let name = "이도연";
+        console.log(name);
+        //let name = "서보경";
+
+        // const : 상수를 만들 때 사용
+        // 특징 : 한 번 선언하면 다른 값을 넣을 수 없고, 이름 중복불가
+        // 개념 : 중요한 데이터를 담을 때 사용
+        // 활용 : 함수를 저장할 때, API키 값을 저장할 때
+        const age = 10;
+
+        // 자료형 : 파이썬의 자료형과 똑같다
+        // 숫자는 다 number // "" or '' 다 String
+        // undefined vs null 차이점
+        // 개발할때 undefined이 출력되면 반드시 주고받는 값을 검증하자!
+        let data;  //-> undefined
+        let data2 = null;
+    </script>
+</body>
+</html>

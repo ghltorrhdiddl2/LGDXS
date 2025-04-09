@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML 주석 -->>
+    <script>
+        // HTML파일에 JS언어를 사용하기 위해서는 반드시 <script>태그가 필요
+        // 출력문 3가지 (콘솔 > alert > write)
+        // 1) 화면에 직접 출력하는 방식 -> document.write() -> 기억할 필요 없음. *document의 의미만 기억하자(HTML문서)
+        document.write("JS로 출력한 텍스트");
+        // 2) 콘솔창에 출력하는 방식 -> 개발자가 사용하는 출력문 -> 값을 주고받을때 검증용도, 오류를 검출할때 사용
+        console.log("콘솔창에 출력할 텍스트"); // 개발자가 쓰는 출력창(F11)
+        // 3) 사용자에게 알림 메시지 제공하는 방식 -> 사용자에게 전달하는 출력문
+        //alert("알림팝업");
+
+        // 입력문 2가지
+        // 1) 사용자에게 입력창을 제공하는 입력문
+        // 입력받은 데이터는 무조건 String 타입 -> 형변환 
+        prompt("생년월일을 입력하세요","ex)900101");
+        // 2) 사용자에게 확인 or 취소를 입력문
+        // 입력받은 데이터는 무조건 boolean 타입 -> IF조건문
+        confirm("삭제하시겠습니까?");
+    </script>
+</body>
+</html>

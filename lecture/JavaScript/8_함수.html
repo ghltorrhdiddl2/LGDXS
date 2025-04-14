@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수(function): 특정 기능을 묶어서 필요할 때마다 호출하는 기법(2가지)
+        //특징 : 매개변수의 타입을 검증하지 않고, 개수도 검증하지 않는다
+        // 그래서 : 개수가 부족하면 undefined, 개수가 넘치면 삭제한다
+        //1. 가장 기본이 되는 함수 제작 방법
+        function add(num1,num2){
+            console.log(num1);
+            console.log(num2);
+        }
+        add(1,2,4);
+
+        //2. ECMA6버전에서 등장한 새로운 함수 기법 -> 화살표함수(애로우function)
+        //상수에 저장해서 활용, function 키워드 없음, 함수명을 상수명이 대체
+        const minus = () =>{
+            alert("로직 작성");
+        }
+    </script>
+</body>
+</html>

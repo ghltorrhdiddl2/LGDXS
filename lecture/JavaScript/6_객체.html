@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 : 다른 의미를 가진 데이터를 관리하기 위한 데이터 타입
+        //객체는 key를 통해서 데이터를 조회
+        //데이터 통신에서는 가장 많이 사용되는 타입이 객체타입!
+        let person = {name:"정형", hobby:"음주가무",gender:"남자"
+            ,school:["한국초","한국중",{전공:"문과",타입:"인문계"}]
+        };
+        //한국고 조회/문과
+        //데이터를 주고 받을 때 구조가 복잡하다 -> 데이터가 양이 많기 때문에
+        // ex) 배열안에 객체 -> 객체 안에 객체 -> 객체 안에 배열
+        //접근법 : 출발지와 목적지를 확인하고, 중간은 다 경유지(배열-인덱스, 객체-key값)
+        person.school[2].전공;
+
+        //조회 = key값으로 조회
+        person.name;
+    </script>
+</body>
+</html>

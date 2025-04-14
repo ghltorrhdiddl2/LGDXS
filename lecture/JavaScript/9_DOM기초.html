@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">안녕하세요 빙글빙글 디즈니 월드</h1>
+    <span id="number">
+        <a href="#">4.19</a>
+    </span>
+    <button id="btn">텍스트 변경하기</button>
+    <script>
+        //DOM (Document Object Model)
+        //내가 보고있는 HTML문서를 태그, 속성, 컨텐츠별로 쪼개서 관리한다
+        //이유 : 각각 접근하여 스타일, 기능을 부여하기 위해서
+        //1. 특정 요소를 접근 = 크롤링의 요소 수집과 유사한 개념(driver.find_element(By.CSS~))
+        //대화 : 내가 보고있는 문서에서 아이디가 text인 요소를 가져다줘!
+        let h1 = document.getElementById("text"); // <h1 id="text">안녕하세요 빙글빙글 디즈니 월드</h1>
+        console.log(h1);
+
+        //2. 요소에서 컨텐츠만 접근
+        //innerHTML vs innerText 차이점
+        // html = 태그를 지원한다 -> 태그를 인식한다 -> 사용처 : 태그를 포함하여 수정할 때
+        // text = 컨텐츠만 인식한다. -> 사용처 : 컨텐츠만 뽑을 때
+        let span = document.getElementById("number").innerHTML;
+        let span2 = document.getElementById("number").innerText;
+        console.log("innerHTML : ",span);  //<a href="#">4.19</a>
+        console.log("innerText : ",span2); //4.19
+
+        //3. 요소안의 컨텐츠를 수정(대입)
+        //사용법 : "="를 통해서 변경할 값을 대입
+        //주의점 : innerHTML은 태그를 인식해서 태그를 제작/ innerText는 태그를 인식하지 못하여 전문을 텍스트로 출력력
+        document.getElementById("text").innerText = "<a href='#'>리자가 물어뜯어 변경되었습니다.</a>"
+    
+        //실습
+        //버튼을 클릭했을때, h1태그의 컨텐츠를 "버튼을 통해서 수정했습니다"라고 변경하기
+        //1)함수제작:changeText
+        //1.1)로직 : h1태그의 글자를 가져와서 "버튼을 통해서 수정했습니다"수정
+        //2)addEventListener로 button과 changeText함수 연결
+        //3)버튼을 눌러 글자 변경
+        const changeText = ()=> {
+            document.getElementById("text").innerText = "버튼을 통해서 수정했습니다"
+        }
+        document.getElementById("btn").addEventListener("click",changeText);
+    
+    </script>
+</body>
+</html>

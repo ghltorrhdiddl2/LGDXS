@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" onclick="print()">알림창 출력</button>
+    <button id="btn2">분리된 이벤트 실행</button>
+    <button id="btn3">오직 나만 쓰는 함수</button>
+    <script>
+        //태그와 JS를 연결해서 이벤트 제어 3가지 방법
+        //1. 태그 안에 직접 연결하는 인라인 방식 -> 태그안에 속성으로 연결시킨다
+        //단점 : 함수명이 노출됨, 유지보수 불편(HTML과 JS가 분리되어있지 않기 때문에)
+        //사용처 : 노출되어도 상관없는 코드(내장함수), 유지보수가 필요하지 않는 경우
+        const print = ()=> {
+            alert("함수가 실행됐습니다.");
+        }
+
+        //2.태그의 연결과 함수의 연결을 모두 JS안에서 처리하는 방식
+        //대화 : 문서에서 id가 btn2인 버튼을 가져와서 이벤트를 연결할거야(클릭, print함수 실행해줘)
+        //사용법 : 1)요소를 조회 2)addEventListener 3)이벤트의 종류, 실행할 함수
+        //주의점 : 함수를 연결할 때 ()를 제거하고 함수 이름만 작성 -> JS영역에서는 ()를 만나면 반드시 실행하기 때문문
+        //주의점 : 반드시 함수를 먼저 선언하고, 연결해줘야 실행이 된다
+        document.getElementById("btn2").addEventListener("click",print);
+
+        //3.함수를 연결과 동시에 생성하는 방식 -> 함수의 이름이 없음 -> 익명함수
+        // 사용목적 : 이름이 없기 때문에, 다른 태그에서 호출이 불가능 -> 오직 하나의 태그에게만 사용할때 활용
+        //장점: 메모리를 크게 사용하지 않는다
+        //단점: 유지보수가 불편
+        document.getElementById("btn3").addEventListener("click",()=>{
+            alert("나만 쓰는 함수입니다.");
+        })
+
+    </script>
+</body>
+</html>

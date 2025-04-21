@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+    </ul>
+    <button id="btn">li태그 출력하기</button>
+
+    <script>
+        //복수개의 요소에 접근 => driver.find_elements
+        const print = ()=>{
+            //모든 li태그를 조회
+            //현재 조회한 데이터가 복수개 -> return 데이터 타입은 리스트
+            //리스트는 인덱스로 조회해야 함
+            let li = document.getElementsByTagName("li");
+            for(let i=0;i<li.length;i++){
+                console.log(li[i].innerText);
+            }
+            console.log(li);
+            //JS에서 복수개의 요소를 조회하면 -> HTMLCollection(유사배열)
+            //배열처럼 인덱스 존재, length도 존재
+            //차이점 : 배열 함수를 사용 불가(push,include,map,filter)
+            //배열처럼 사용하려면? 유사배열 -> 배열로 형변환
+            let arr = Array.from(li);
+            console.log(arr);
+        }
+        document.getElementById("btn").addEventListener("click",print);
+    </script>
+</body>
+</html>

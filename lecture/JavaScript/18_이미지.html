@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA0MDNfMjMw%2FMDAxNzQzNjM2NTE5NDIz.mqaGtaFOT7zlh0CrBVxHxIBwXKWf5lnu-o1BsTtw3bEg.kw7cQe9EdOv5F0SzEHSmWIdZDCWewbarX55mq88jMmcg.PNG%2F%25C0%25A73.png&type=a340">
+    <br>
+    <button id="btn">이미지 변경</button>
+    
+    <script>
+        //실습목표 : 버튼을 클릭했을 때, 이미지를 변경 * 속성에 접근
+        let original = document.getElementById("img").src;
+        let img2 = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjRfMjcg%2FMDAxNzI0NDcyMTMyNzMy.WxtJMQdhe4OLzQq4oXH2V0e4lThgShV2eMrqaj_Yf4sg.ds3d5Zs_B7hUhGhdlPCOqf8ENXwGzpoCbXkYQivef6gg.JPEG%2F1.jpg&type=sc960_832";
+
+        const img_change = ()=>{
+            if(document.getElementById("img").src != img2)
+                document.getElementById("img").src = img2;
+            else
+                document.getElementById("img").src = original;
+        }
+        document.getElementById("btn").addEventListener("click",img_change);
+    </script>
+</body>
+</html>

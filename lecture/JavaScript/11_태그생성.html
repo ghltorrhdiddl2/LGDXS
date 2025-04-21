@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭해서 태그를 누적 생성하자!</h1>
+    <button id="btn_1">h1태그 생성</button>
+    <button id="btn_a">a태그 생성</button>
+    <button id="btn_ul">ul태그 생성</button>
+    <div id="content"></div>
+
+    <script>
+        //실습 목표 : 각각의 버튼을 클릭했을 때, div안에 해당하는 태그를 생성 
+        //필요 개념 : 함수제작, 이벤트연결, innerHTML, 누적
+        //1) 3개의 함수 제작
+        //2) 각각의 함수에 들어갈 로직은 div태그에 태그를 포함한 컨텐츠를 넣어준다(innerHTML)
+        //*누를 때마다 기존 태그가 지워지는게 아닌, 누적을 시켜야 함(복합대입연산자)
+        //3)각각의 태그에게 함수를 연결
+
+        //변수에 요소들을 모아놓는 공간
+        let div = document.getElementById("content");
+        let btn_h1 = document.getElementById("btn_1");
+        let btn_a = document.getElementById("btn_a");
+        let btn_ul = document.getElementById("btn_ul");
+
+        //함수를 만드는 공간
+        const h1Click = ()=>{
+            div.innerHTML += "<h1>h1태그 생성</h1>";
+        }
+        const aClick = ()=>{
+            div.innerHTML += "<a href='https://www.google.com/'>a태그 생성</a>";
+        }
+        const ulClick = ()=>{
+            div.innerHTML += 
+            `<ul>
+                <li>ul태그 생성</li>
+                <li>집에보내주</li>
+            </ul>`;  // `는 줄바꿈 가능하게해줌!
+        }
+
+        //함수를 연결하는 공간
+        btn_h1.addEventListener("click",h1Click);
+        btn_a.addEventListener("click",aClick);
+        btn_ul.addEventListener("click",ulClick);
+    </script>
+</body>
+</html>

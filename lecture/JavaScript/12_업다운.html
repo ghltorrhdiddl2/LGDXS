@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="btn_plus">+증가</button>
+    <button id="btn_minus">-감소</button>
+    <script>
+        //실습목표 : 사용자가 +를 누르면 1씩 증가/-를 누르면 1씩 감소 단! 값이 0보다 클때만 감소(즉, 음수x)
+        //1) 2개의 함수를 제작
+        //2) 각각 id가 number인 p태그의 컨텐츠 값을 +1 or -1 적용(형변환 -> 문자를 숫자로 변경 Number())
+        //조건! 값이 0보다 클 때만 -1 가능
+        //3) 각각 버튼에게 함수 연결
+        let num = document.getElementById("number");
+        let btn_plus = document.getElementById("btn_plus");
+        let btn_minus = document.getElementById("btn_minus");
+        
+        //JS에서 변수에 관리할 때는 항상 요소만 저장하자
+        // 값을 의미하는 키값 innerHTML, innerText는 담지 말자!
+        const plush = ()=>{
+            //핵심 : 자바스크립트는 값이 변하면 반드시 다시 넣어줘야 화면에 출력됨
+            num.innerText = Number(num.innerText) + 1;
+        }
+        const minus = ()=>{
+            if(Number(num.innerText)>0){
+                num.innerText = Number(num.innerText) - 1;
+            } 
+        }
+
+        btn_plus.addEventListener("click",plush);
+        btn_minus.addEventListener("click",minus);
+        //이번 실습의 핵심 -> 반드시 값이 변하면 다시 넣어주자! -> 그래야 화면에 변화가 나타난다
+    </script>
+</body>
+</html>

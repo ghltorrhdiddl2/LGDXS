@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1 id="text">스타일을 변경해보세요~</h1>
+    <script>
+        //실습목표 : h1태그에 마우스를 올렸을 때(글자색을 빨간색으로), 마우스를 뗐을 때(글자색을 초록색으로)
+        //조건 : 제이쿼리로 작성, 익명함수로 제작하기
+        //이벤트 : mouseover, mouseout
+        //활용처 : 메뉴바에 하위 메뉴를 보였다, 안보였다 하는 기능 제작, 팝업창 보여줄 때, 광고창을 확대할 때
+        $("#text").on("mouseover",()=>{
+            $("#text").css("color","red");
+        });
+ 
+        $("#text").on("mouseout",()=>{
+            $("#text").css("color","green");
+        });
+    </script>
+</body>
+</html>

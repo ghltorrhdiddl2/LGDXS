@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="nomal">
+    <h1>즐거운 금요일 입니다!</h1>
+    <button id="btn">다크모드 변경</button>
+
+    <script>
+        //실습목표 : 버튼을 클릭할 때 클래스가 normal -> dark로로/ dark면 normal로
+        //주의점 : 프론트엔드는 사용자와 상호작용을 늘 신경써야 함 -> 버튼의 텍스트 변경
+        //키포인트 : 클래스는 복수개를 가질 수 있다! -> 항상 기존 클래스를 지워줘야 함
+        // tip : 프론트엔드 개발할 때는 항상 화면과, 개발자 도구를 같이 비교하자
+        // 내가 변화준 태그들은 이벤트가 발생할 때 마다 깜박거린다
+        const changeMode = ()=>{
+            if($("body").hasClass("normal")){
+                $("body").addClass("dark");
+                $("body").removeClass("normal");
+                $("#btn").text("일반모드 변경");
+            }else{
+                $("body").addClass("normal");
+                $("body").removeClass("dark");
+                $("#btn").text("다크모드 변경");
+            }    
+        }
+        $("#btn").on("click",changeMode);
+    </script>
+</body>
+</html>

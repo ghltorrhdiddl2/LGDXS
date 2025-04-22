@@ -1,0 +1,10 @@
+
+.normal{
+    background-color: white;
+    color: black;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
+/*미리 스타일 만들어두어서 나중에 클래스 바꿔끼우는 원리*/

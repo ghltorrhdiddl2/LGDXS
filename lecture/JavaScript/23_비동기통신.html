@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>데이터 비동기로 받아오기 페이지</h1>
+    <h1>h1태그가 깜박거리는지 확인해보세요.</h1>
+    <button id="btn">데이터 요청하기</button>
+
+    <script>
+        //실습목표 : 버튼을 클릭했을 때, 영화정보API 요청 -> 조회된 데이터 분석 -> 필요한 값만 출력
+        //주의점 : 데이터가 받아와 질 때 화면의 변화에 집중!(전체 데이터가 변하는지 확인) 
+        //학습내용 : 비동기통신, 객체데이터 분석(JSON) -> 객체는 key, 배열은 index값에 집중
+        const reqMovie = ()=>{
+            //ajax비동기 통신을 통해서 데이터를 요청
+            $.ajax({
+                //1. 요청할 서버의 주소
+                // tip : 프로젝트 진행시, url주소에 api가 아닌 서버(spring)에게 요청할 데이터가 있다면, 서블릿(servlet)의 주소를 적어라라
+                url : "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=b81e5b9e89ef04ead17993d9e0882a9c&targetDt=20250416",
+                //2. 전송방식(get, post) -> 통신의 기본값이 GET방식 -> 적지 않으면 GET 인식(즉, 생략가능)
+                type : "GET",
+                //3. 전송할 데이터 (선택) -> 서버에게 전달할 데이터가 있는 경우
+                // data : "보낼데이터";
+                //4. 성공했을 때 -> 통신이 올바르게 동작할 때 돌아갈 로직
+                // 성공함수에는 반드시 매개변수를 하나 작성한다 -> 서버가 넘겨준 데이터가 들어감
+                success : (res)=>{
+                    let arr = res.boxOfficeResult.dailyBoxOfficeList;
+                    //영화 1위부터 10위까지 제목만 출력
+                    for(let i=0;i<arr.length;i++){
+                        console.log(res.boxOfficeResult.dailyBoxOfficeList[i].movieNm);
+                    }
+                },
+                    //객체는 key, 배열은 index값
+                //5. 실패했을 때 -> 통신이 올바르게 동작하지 않을때 돌아갈 로직
+                error : ()=>{alert("통신에 실패..")}
+            });
+        }
+
+        $("#btn").on("click",reqMovie);
+    </script>
+</body>
+</html>

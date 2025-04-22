@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        /*
+            JS로 HTML 요소 생성하기
+            DOM : 태그, 속성, 컨텐츠가 다 따로 존재함
+            주의점 : 생성을 할 때는 태그, 컨텐츠, 속성을 따로 제작한 다음에 합치는 작업을 진행
+            1) 단순한 텍스트를 가진 태그 생성
+            목표 : span태그를 만들고 그 안에 "생성된 텍스트"라는 글자 넣기 -> div태그에 넣어주기
+            순서 : span태그 생성 -> 컨텐츠 생성 -> span태그와 컨텐츠를 결합 -> div에 넣기기
+        */
+        //1) 태그 생성하기 -> 요소 생성하기
+        let span = document.createElement("span");
+        console.log("생성한 태그",span);
+
+        //2) 컨텐츠 생성하기 -> 텍스트노드 생성하기
+        let text = document.createTextNode("생성된 텍스트입니다");
+        console.log("생성한 텍스트", text);
+
+        //3) 태그와 컨텐츠를 결합 -> 포함하는 태그는 부모고, 포함되는 컨텐츠는 자식이다
+        // appendChild() -> 자식요소를 추가하는 함수
+        span.appendChild(text);
+        console.log("결과물",span);
+
+        //4) div에 span태그 넣어주기
+        let div = document.getElementById("container");
+        div.appendChild(span);
+
+        /*
+            속성이 포함된 태그 생성하기
+            목표 : img 태그를 만들고, src속성을 제작, 속성에 값을 넣기, 태그+속성 결합, div에 넣기
+            순서 : 태그 생성 -> 속성 생성 -> 속성에 값 추가 -> 태그와 속성 결합 -> div넣기
+        */
+        //1) 이미지 태그 생성하기
+        let img = document.createElement("img");
+        //2) src속성 생성하기
+        let src = document.createAttribute("src");
+        //3) 속성에 값 추가하기
+        src.value = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEwMjVfMjYg%2FMDAxNzI5ODI1NjE5MjY3.UztxqBlz1pwIvAjyE58Xjy-le3kuF8GuFKfgcvvj3WAg.HjhGUkogdgp7AKXPv7YW1ojma-h7qxXFg0EnnvX-K7og.PNG%2F016.png&type=sc960_832";
+        //4) 태그 + 속성 결합하기 -> 부모자식 관계 아님!
+        img.setAttributeNode(src);
+        //5) div에 넣기
+        div.appendChild(img);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* 게시판 테이블 만들기 */
+CREATE TABLE BOARD(
+	IDX INT NOT NULL AUTO_INCREMENT,
+	TITLE VARCHAR(100) NOT NULL,
+	CONTENTS VARCHAR(1000) NOT NULL,
+	WRITER VARCHAR(100) NOT NULL,
+	COUNT INT DEFAULT 0,
+	INDATE DATETIME DEFAULT NOW(),
+	PRIMARY KEY(IDX)
+);
+
+INSERT INTO BOARD(TITLE, CONTENTS, WRITER)
+VALUES('이번 주 금요일은 오전 수업만 진행합니다.', '뻥이지롱~~!', '손지영');
+
+INSERT INTO BOARD(TITLE, CONTENTS, WRITER)
+VALUES('오늘의 저녁메뉴는 김치찜입니다.', '올때 돼지고기 목살 사와~', '엄마');
+
+INSERT INTO BOARD(TITLE, CONTENTS, WRITER)
+VALUES('안녕하세요! 폭삭 속았수다 많은 사랑 부탁드립니다.', '감사합니다.', '아이유');
+
+INSERT INTO BOARD(TITLE, CONTENTS, WRITER)
+VALUES('인공지능 별거 아니다', '뭐라뭐라', '의문의 남자');
+
+INSERT INTO BOARD(TITLE, CONTENTS, WRITER)
+VALUES('안녕하세요! 반갑습니다!', '하하! 우리 서로 인사해요!', '박병관');
+
+COMMIT;
+
+SELECT * FROM BOARD;
+

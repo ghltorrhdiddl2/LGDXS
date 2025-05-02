@@ -19,6 +19,7 @@ class _ExStatefulState extends State<ExStateful> {
   //데이터 값이 언제든 바뀔 수 있음!
   bool isChecked = false;
   bool isChecked2 = false;
+  bool isChecked3 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class _ExStatefulState extends State<ExStateful> {
             Row(
               children: [
                 Checkbox(value: isChecked, onChanged: (value){
+                  //상태가 바뀌면 어떤 작업을 할지 로직을 세울 수 있는 영역!
                   setState(() {
                     isChecked=value!;
                   });
@@ -50,8 +52,15 @@ class _ExStatefulState extends State<ExStateful> {
                 Text('점심 고민중', style: TextStyle(fontSize: 20),)
               ],
             ),
-            //상태가 바뀌면 어떤 작업을 할지 로직을 세울 수 있는 영역!
-            
+            //사용자 편의성을 위한 위젯 CheckboxListTile
+            CheckboxListTile(
+              title: Text('data3'),
+              controlAffinity: ListTileControlAffinity.leading,
+              value: isChecked3, onChanged: (v){
+                setState(() {
+                  isChecked3 = v!;
+                });
+            })
           ],)),
     );
   }

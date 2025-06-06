@@ -1,5 +1,0 @@
-ultralytics
-scikit-learn
-opencv-python
-requests
-google-generativeai

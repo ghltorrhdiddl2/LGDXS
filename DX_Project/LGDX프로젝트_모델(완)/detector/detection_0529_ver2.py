@@ -18,7 +18,7 @@ from io import BytesIO
 
 warnings.filterwarnings('ignore', category=UserWarning)
 
-GOOGLE_API_KEY = "AIzaSyAodNAwhpYmQkLWPA3dv-giw0WppjLhjMY"
+GOOGLE_API_KEY = "API key change"
 genai.configure(api_key=GOOGLE_API_KEY)
 LLM = genai.GenerativeModel(model_name="models/gemini-2.0-flash")
 

@@ -9,7 +9,7 @@ import traceback
 load_dotenv()
 
 # API 키와 모델명 상수 정의
-GOOGLE_API_KEY = "AIzaSyAodNAwhpYmQkLWPA3dv-giw0WppjLhjMY"
+GOOGLE_API_KEY = "KEY"
 MODEL_NAME = "models/gemini-2.5-flash-preview-05-20"
 
 # def generate_normal_summary(events):

@@ -24,7 +24,7 @@ SERVER_URL     = os.getenv("SERVER_URL", "http://localhost:8000")
 API_EVENT_EP   = f"{SERVER_URL}/event"
  
 # API 키 직접 설정
-GOOGLE_API_KEY = "AIzaSyAodNAwhpYmQkLWPA3dv-giw0WppjLhjMY"
+GOOGLE_API_KEY = "API key change"
 genai.configure(api_key=GOOGLE_API_KEY)
 LLM = genai.GenerativeModel(model_name="models/gemini-2.5-flash-preview-05-20")
  

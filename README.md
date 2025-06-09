@@ -1,9 +1,9 @@
 # LGDXS
 lecture --> daliy study
 
-BX_Project --> 5개 팀 중 최우수상
+BX_Project --> Awarded Best Team among 5 teams
 
-CX_Project --> 5개 팀 중 최우수상
+CX_Project --> Awarded Best Team among 5 teams
 
-coding text --> 코딩 테스트 대비 백준 문제집 풀이
-- 현재는 "Algorithm" repository에 프로그래머스 코딩 풀이 자동 업로드 중
+coding text --> Solved coding Baekjoon workbooks to prepare for coding tests
+- Currently auto-uploading Programmers coding solutions to the "Algorithm" repository

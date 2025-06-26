@@ -1,9 +1,3 @@
-# LGDXS
-lecture --> daliy study
+Collaboration Adrress : <https://github.com/orgs/404NotFound-DXProject/repositories>
 
-BX_Project --> Awarded Best Team among 5 teams
-
-CX_Project --> Awarded Best Team among 5 teams
-
-coding text --> Solved coding Baekjoon workbooks to prepare for coding tests
-- Currently auto-uploading Programmers coding solutions to the "Algorithm" repository
+Project Code and a brief explanation
